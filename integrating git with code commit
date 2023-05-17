@@ -9,3 +9,19 @@
    14  git commit -m  "my node app"
    15  ssh-keygen -t rsa
    17  cat /home/ec2-user/.ssh/id_rsa.pub
+   
+   ####once you add the public key in IAM
+    1  cd /home/ec2-user/.ssh
+    2  ls
+    3  nano config
+    ####inside the file add this three line change the user with the sshkey id
+Host git-codecommit.*.amazonaws.com
+User APKAVFRJ3GX7WWDKTYOJ
+IdentityFile ~/.ssh/id_rsa
+###to save the file you need to press CTRL x then press y and enter this way your file will be saved
+####once done go to code commit and create a new repo then go back to your nodeapp folder
+cd /home/ec2-user/nodeapp-eb
+###create a new repo in code commit. add the same inside your nodeapp folder
+git remote add origin ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/gopal-nodeapp
+###finally push the code to code repo
+git push origin master
