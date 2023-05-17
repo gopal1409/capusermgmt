@@ -1,0 +1,11 @@
+3  sudo yum install git
+    4  git clone https://github.com/gopal1409/nodeapp-eb.git
+    5  cd nodeapp-eb/
+    9  rm -rf .git
+   11  git config --global user.name "gopal"
+   12  git config --global user.email "gopal1409@gmail.com"
+   10  git init
+   13  git add .
+   14  git commit -m  "my node app"
+   15  ssh-keygen -t rsa
+   17  cat /home/ec2-user/.ssh/id_rsa.pub
